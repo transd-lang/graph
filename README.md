@@ -5,9 +5,18 @@ This little program written on Transd generates a graph of a user provided shadi
 
 #### How to use
 
-The image is written to a file in PPM format, which can be viewed in many graphic viewers. It also can be opened with LibreOffice Draw application.
+For running the program a Transd command line interpreter is necessary. It can be downloaded here: 
 
-The program has a default shading function which can be used for the performance test. The default function will generate the graph of the quadratic math function: f(x) = x^2. 
+[Command line interpreter for Transd](https://github.com/transd-lang/frend)
+
+The program is launched from the command line with the following syntax:
+
+```
+<frend> <graph.td>
+```
+
+`<frend>` is the full path to the FREND command line interpreter, and `<graph.td>`
+is the full path to the "graph.td" file from this repository.
 
 Before running the program, the user should open the `graph.td` file in any text editor and assign the desired values to the variables in the "Export" module. These variables are:
 
@@ -16,6 +25,10 @@ Before running the program, the user should open the `graph.td` file in any text
 * fileName: the name of the image file where the rendered image will be written. This file name must end with '.ppm' file extension.
 
 Note, that `height` and `width` define the number of pixels in the image and therefore how many times the shading function is called during the program run. This number is obtained by multiplying `height` on `width`.
+
+The image is written to a file in PPM format, which can be viewed in many graphic viewers. It also can be opened with LibreOffice Draw application.
+
+The program has a default shading function which can be used for the performance test. The default function will generate the graph of the quadratic math function: f(x) = x^2. 
 
 The shading function need not necessarily be a math function with one value per each x-coordinate. This can be any routine that sets on each call three bytes in the pixel vector with RGB values from 0 to 255. The shading function can, for example, render graphs of several different math functions simultaneously.
 
